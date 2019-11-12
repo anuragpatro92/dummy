@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=IFoodPublisher
+comment0.text=\n\ Write\ a\ description\ of\ class\ IFoodPublisher\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=obj
+comment1.target=void\ attach(IFoodListner)
+comment1.text=\n\ Add\ Observer\ to\ Subscribers\ List\n\ @param\ obj\ Observer\ Object\n
+comment2.params=obj
+comment2.target=void\ removeObserver(IFoodListner)
+comment2.text=\n\ Remove\ Observer\ from\ Subscription\n\ @param\ obj\ Observer\ Object\n
+comment3.params=
+comment3.target=void\ notifyListner()
+comment3.text=\n\ Trigger\ Events\ to\ Observers\n
+numComments=4
