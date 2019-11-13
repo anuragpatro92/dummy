@@ -1,5 +1,7 @@
 import greenfoot.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JInternalFrame;
 
 public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
     private final int RIGHT = 0;
@@ -11,7 +13,6 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
     private int counter = 0;
     private int speedDivision = 0;
     private int applesConsumed =0;
-    
 
     private IScoreObserver observer;
     private ArrayList<IFoodListner> listner;
@@ -65,6 +66,7 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
 
         // If the SnakeHead is touch the Apple then the following will be true and run
         // the code which hides the Apple.
+        if(!GameOver.isGameOver()) {
         if (isTouching(Food.class)) {
             removeTouching(Food.class);
 
@@ -78,7 +80,7 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
         }
 
         if (isTouching(SnakeBody.class)) {
-            Greenfoot.stop();
+            gameover();
             // Greenfoot.playSound("gameOver.mp3");
         }
 
@@ -107,6 +109,7 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
             setLocation(getX(), 0);
             // Greenfoot.playSound("jump.mp3");
         }
+    }
 
     }
 
@@ -166,5 +169,20 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
     public void notifyController() {
         this.observer.changeState(applesConsumed);
         
+    }
+    
+    public void gameover(){
+       GameOver.endGame();
+
+       World world = getWorld(); 
+       // if (world != null) {
+           // world.removeObjects(world.getObjects(null));
+        // }
+        JOptionPane.showMessageDialog(new JInternalFrame(), "GAME OVER","Oops!", JOptionPane.INFORMATION_MESSAGE);
+        // GreenfootImage bg = new GreenfootImage("gameover.jpg");
+        // System.out.print("print this:" +world.getWidth()+ world.getHeight());
+        // // bg.scale(world.getWidth(), world.getHeight());
+        // world.setBackground(bg);
+        Greenfoot.setWorld(new MyWorld());
     }
 }
