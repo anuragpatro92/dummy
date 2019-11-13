@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=IScoreRegister
+comment1.params=observer
+comment1.target=void\ registerObserver(IScoreObserver)
+comment2.params=
+comment2.target=void\ notifyController()
+numComments=3
