@@ -7,7 +7,6 @@ public class Level2 implements Ilevel {
 	
 	
 	public Level2(LevelController controller) {
-		
 		this.controller = controller;
 	}
 

@@ -69,7 +69,7 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
         if(!GameOver.isGameOver()) {
         if (isTouching(Food.class)) {
             removeTouching(Food.class);
-
+            
             applesConsumed++;
             if(applesConsumed%5 == 0) {
                 notifyController();
@@ -80,6 +80,10 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
         }
 
         if (isTouching(SnakeBody.class)) {
+            gameover();
+            // Greenfoot.playSound("gameOver.mp3");
+        }
+        if (isTouching(Obstacle.class)) {
             gameover();
             // Greenfoot.playSound("gameOver.mp3");
         }
@@ -136,19 +140,19 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
             counter = 0;
         }
 
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown("up") && getRotation() != DOWN) {
             setRotation(UP);
         }
 
-        if (Greenfoot.isKeyDown("right")) {
+        if (Greenfoot.isKeyDown("right") && getRotation() != LEFT) {
             setRotation(RIGHT);
         }
 
-        if (Greenfoot.isKeyDown("down")) {
+        if (Greenfoot.isKeyDown("down") && getRotation() != UP) {
             setRotation(DOWN);
         }
 
-        if (Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("left") && getRotation() != RIGHT) {
             setRotation(LEFT);
         }
 
@@ -173,8 +177,8 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
     
     public void gameover(){
        GameOver.endGame();
-
-       World world = getWorld(); 
+       World world = getWorld();
+       
        // if (world != null) {
            // world.removeObjects(world.getObjects(null));
         // }
@@ -183,6 +187,6 @@ public class SnakeHead extends Actor implements IFoodPublisher, IScoreRegister {
         // System.out.print("print this:" +world.getWidth()+ world.getHeight());
         // // bg.scale(world.getWidth(), world.getHeight());
         // world.setBackground(bg);
-        Greenfoot.setWorld(new MyWorld());
+        Greenfoot.setWorld(new SelectionScreen());
     }
 }

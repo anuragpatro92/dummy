@@ -14,6 +14,5 @@ public class Level1 implements Ilevel{
         JOptionPane.showMessageDialog(new JInternalFrame(), "Level2","Congrats!", JOptionPane.INFORMATION_MESSAGE);
        // System.out.println("level1 to level2");
         controller.changeLevel2();
-        
     }
 }

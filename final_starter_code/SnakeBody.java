@@ -3,8 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * This part of the code makes up and adds to the body of the snake.
  * 
- * @author (Andrico Zacharia) 
- * @version (v1.0 26/01/2018)
  */
 public class SnakeBody extends Actor
 {

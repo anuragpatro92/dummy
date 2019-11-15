@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Apple extends Food
 {
-	public static int appleConsumed=0;
+    public static int appleConsumed=0;
     public Apple(){
     	
     }

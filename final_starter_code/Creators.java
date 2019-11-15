@@ -1,12 +1,9 @@
-
+import greenfoot.*; 
 public abstract class Creators {
 
-    public abstract Food getFood();
+    public abstract Actor getItem();
     
-    public Food sendFood() {
-
-        return getFood();
-
+    public Actor sendItem() {
+        return getItem();
     }
-
 }
