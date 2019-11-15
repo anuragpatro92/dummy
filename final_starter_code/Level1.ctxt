@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Level1
-comment1.params=controller
-comment1.target=Level1(LevelController)
-comment2.params=
-comment2.target=void\ changeState()
-numComments=3

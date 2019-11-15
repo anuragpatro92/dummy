@@ -3,8 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * This part of the code makes up and adds to the body of the snake.
  * 
- * @author (Andrico Zacharia) 
- * @version (v1.0 26/01/2018)
  */
 public class SnakeBody extends Actor
 {
@@ -13,6 +11,7 @@ public class SnakeBody extends Actor
    
    public SnakeBody(int lifeSpan) // This function simply generates another black block to be used as a SnakeBody.
    {
+	//   GreenfootImage drawedImage = new GreenfootImage("/Users/anuragpatro/Downloads/dummy-master/images/snakeHead.jpg");
        GreenfootImage img = new GreenfootImage(20,20); //Create a new image with 20x20 as the size.
        img.setColor(Color.GRAY); //set SnakeBody colour
        img.fill(); //Fill the block.

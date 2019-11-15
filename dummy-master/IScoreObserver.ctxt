@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.target=IScoreObserver
-comment1.params=score
-comment1.target=void\ changeState(java.lang.Integer)
-numComments=2
